@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import SectionWrapper, { itemVariants } from "../components/SectionWrapper";
 import Button from "../components/Button";
 import { contactContent, siteConfig } from "../data/content";
-import { FaCheckCircle, FaExclamationCircle, FaSpinner } from "react-icons/fa";
+import { FaCheckCircle, FaExclamationCircle, FaSpinner, FaPhone } from "react-icons/fa";
 
 // ─── EmailJS Configuration ─────────────────────────────
 // Replace these placeholders with your actual EmailJS credentials.
@@ -149,7 +149,7 @@ export default function Contact() {
                         className="bg-gradient-to-br from-sage-50 to-pastel-50 rounded-2xl p-6 border border-sage-100/50"
                     >
                         <h3 className="font-poppins font-semibold text-base text-text-primary mb-3">
-                            Prefer email?
+                            Reach Out Directly
                         </h3>
                         <a
                             href={`mailto:${siteConfig.email}`}
@@ -157,7 +157,22 @@ export default function Contact() {
                         >
                             {siteConfig.email}
                         </a>
-                        <p className="text-text-muted text-xs mt-3">
+
+                        <div className="mt-4 space-y-2">
+                            {siteConfig.phones.map((phone) => (
+                                <a
+                                    key={phone}
+                                    href={`tel:${phone.replace(/\s/g, "")}`}
+                                    className="flex items-center gap-2 text-sage-600 hover:text-sage-700 font-medium transition-colors text-sm"
+                                    aria-label={`Call ${phone}`}
+                                >
+                                    <FaPhone className="text-xs" aria-hidden="true" />
+                                    {phone}
+                                </a>
+                            ))}
+                        </div>
+
+                        <p className="text-text-muted text-xs mt-4">
                             All inquiries are treated as strictly confidential.
                         </p>
                     </motion.div>

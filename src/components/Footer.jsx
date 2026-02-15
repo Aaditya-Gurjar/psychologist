@@ -1,4 +1,4 @@
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { siteConfig } from "../data/content";
 import { footerContent } from "../data/content";
 
@@ -31,6 +31,19 @@ export default function Footer() {
                             <FaEnvelope aria-hidden="true" />
                             {siteConfig.email}
                         </a>
+                        <div className="mt-3 space-y-1.5">
+                            {siteConfig.phones.map((phone) => (
+                                <a
+                                    key={phone}
+                                    href={`tel:${phone.replace(/\s/g, "")}`}
+                                    className="flex items-center gap-2 text-sage-200 hover:text-white transition-colors text-sm"
+                                    aria-label={`Call ${phone}`}
+                                >
+                                    <FaPhone className="text-xs" aria-hidden="true" />
+                                    {phone}
+                                </a>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Quick Links */}

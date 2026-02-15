@@ -2,6 +2,7 @@ export const siteConfig = {
     name: "Tanya Rao",
     title: "Tanya Rao — Psychologist & Counsellor",
     email: "Tanyarao0205@gmail.com",
+    phones: ["+91 8910227722", "+91 9007050183"],
     tagline: "Your Mental Health Matters",
     description:
         "Compassionate counselling for adults, children, and families. Expert psychologist specializing in anxiety, depression, addiction, and emotional wellbeing.",
